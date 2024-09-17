@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .wrapper {
+            margin: 0 auto;
+            width: 1200px;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            top: 1px;
+            width: 180px;
+        }
+
+        ul li a {
+            display: inline-block;
+            width: 50px;
+            height: 35px;
+            font-size: 21px;
+            line-height: 33px;
+            text-align: center;
+            color: #999;
+            border: 1px solid #333;
+        }
+
+        ul li a.active {
+            border-bottom-color: #fff;
+            color: lightblue;
+        }
+
+        .box div {
+            display: none;
+            width: 300px;
+            height: 200px;
+            border: 1px solid #333;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        .box div.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="box wrapper">
+        <ul>
+            <li><a class="active" href="#">读书</a></li>
+            <li><a href="#">电影</a></li>
+            <li><a href="#">音乐</a></li>
+        </ul>
+        <div class="active">新闻1</div>
+        <div>新闻2</div>
+        <div>新闻3</div>
+    </div>
+    <script>
+        var box = document.getElementById('box')
+        var aList = box.getElementsByTagName("a")
+        var divList = box.getElementsByTagName("div")
+        var temp = null;
+        for (var i = 0; index < aList.length; i++) {
+            aList[i].onclick=function(){
+                aList[i]['zfIndex'] = i
+                temp = i
+                changeTab(this.zfIndex,temp)
+            }
+        }
+        function changeTab(){
+            for(var i = 0; i < aList.length; i++) {
+                aList[i].className = ''
+                divList[i].className = ''
+            }
+            aList[index].className = 'active'
+            divList[index].className = 'active'
+        }
+    </script>
+</body>
+
+</html>

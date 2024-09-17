@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        数据类型
+        基本数据类型
+            数值型(number)
+                整数
+                小数
+                NaN
+            字符串
+            boolean
+            null
+            undefined
+            symbol
+        引用数据类型
+            object
+            array
+            reg
+            function(){}
+            date 
+        */
+        /* isNaN的监测机制
+        首先验证当前要检测的值是否为数字类型，如果不是浏览器会调用Number()方法将其转换为数字
+        当前检测的值已经是数字类型 是有效数字返回false 不是返回true
+        */
+       console.log(isNaN(NaN));//true
+       console.log(isNaN('13'));//false
+       console.log(isNaN('13px'));//true
+       console.log(isNaN(null));//false
+       console.log(isNaN(undefined));//true
+       console.log(isNaN(true));//false
+       console.log(isNaN({name:'张三',age:22 }));//true
+       console.log(isNaN({age:22 }));//true
+       console.log(isNaN([12,23]));//true
+       console.log(isNaN([12]));//false
+       console.log(isNaN(/^$/));//true
+       console.log(isNaN(function(){}));//true
+    </script>
+</body>
+</html>
