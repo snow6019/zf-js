@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 增删改查
+        var array = [1,2,3,4,5];
+        var pushRes = array.push(7,8,9);
+        console.log("push()返回值="+pushRes);//push()返回新数组长度
+        console.log(array);
+        var popRes = array.pop();
+        console.log("pop()返回值="+popRes);//pop()返回删除后的元素
+        console.log(array);
+        var shiftRes = array.shift();
+        console.log("shift()返回值="+shiftRes);//shift()返回删除后的元素
+        console.log(array);
+        var unshiftRes = array.unshift(6,'tom','jake')
+        console.log("unshift()返回值="+unshiftRes);//unshift()返回新数组长度
+        console.log(array);
+        // splice可以对数组进行增删改
+        // 删除array.splice(n,m) 从索引n开始删除m个内容 把删除的部分以一个新数组返回 原数组改变
+        var spliceDelArray = array.splice(2,3);
+        console.log("splice(n,m)返回值="+spliceDelArray);
+        console.log(array);
+        // 从索引2处一直删到末尾
+        var spliceDelArray2Res = array.splice(2)
+        console.log("splice(n)返回值="+spliceDelArray2Res);
+        console.log(array);
+        // 新增
+        var arr2 = ['a','b','c'];
+        var arr2SpliceRes = arr2.splice(1,0,'u','f','o');
+        console.log("splice(n,0,xyz ...)返回值="+arr2SpliceRes);
+        console.log(arr2);
+        // 修改
+        var updateArray = [1,2,3,4,5,6];
+        var updateArraySpliceRes = updateArray.splice(1,updateArray.length-1,'珠峰');
+        console.log('splice(n,m,xyz...)返回值='+updateArraySpliceRes);
+        console.log(updateArray);
+        // 删除数组的最后一项，你有几种方法?
+        /* 
+        pop
+        splice(arr.length-1)
+        arr.length--
+        */
+        // 向数组末尾追加新内容，你有几种方法?
+        /* 
+        push
+        splice(arr.length,0,xyz)
+        arr[length] = x
+        */
+    </script>
+</body>
+</html>
