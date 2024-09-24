@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        slice
+        作用：在一个数组中，按照条件查找出其中的部分内容
+        参数：两个参数(n/m) 从索引n开始,查找到m处 但是不包含m
+        返回：以一个新数组存储查找的内容
+        原有数组不会变
+        */
+       var ary = [1,2,3,4,5,6,7];
+       var ary2 = ary.slice();
+       console.log(ary);
+       console.log(ary2);
+       fuSliceAry = ary.slice(-3,-1);
+       console.log(fuSliceAry);
+    </script>
+</body>
+</html>
