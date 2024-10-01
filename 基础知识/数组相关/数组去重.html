@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array = [1,2,3,3,3,4,4,9,9]
+        console.log('ary1='+array)
+        for (let i = 0; i < array.length-1; i++) {
+            for (let j = i+1; j < array.length; j++) {
+                if(array[i] === array[j]){
+                    array.splice(j,1)
+                    j--
+                }
+            }
+        }
+        console.log('ary2='+array)
+    </script>
+</body>
+</html>
