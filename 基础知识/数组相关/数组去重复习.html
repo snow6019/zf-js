@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ary = [1,2,3,1,2,3,1,2,3];
+        console.log('去重前:'+ary);
+        // 双重for循环去重
+        for (let i = 0; i < ary.length-1; i++) {
+            let element = ary[i];
+            for(let j = i+1; j < ary.length; j++) {
+                if(element === ary[j]) {
+                    ary.splice(j,1);
+                    j--;
+                }
+            }
+        }
+        // 对象兼职对去重q
+        let obj = {};
+        // for (let i = 0; i < ary.length; i++) {
+        //     let temp = ary[i];
+        //     if (typeof obj[temp] !== 'undefined') {
+        //         ary.splice(i,1);
+        //         i--;
+        //         continue;
+        //     }
+        //     obj[temp] = temp;
+        // }
+        // for(let i = 0; i < ary.length; i++) {
+        //     let temp = ary[i];
+        //     if(typeof obj[temp] !== 'undefined'){
+        //         ary[i] = ary[ary.length-1];
+        //         ary.length--;
+        //         i--;
+        //         continue;
+        //     }
+        //     obj[temp] = temp;
+        // }
+        console.log('去重后:'+ary);
+
+        var newAry = Array.from(new Set(ary));
+        console.log(newAry.toString());
+    </script>
+</body>
+</html>

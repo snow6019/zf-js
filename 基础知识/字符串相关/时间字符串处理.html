@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "2018-4-4 16:26:8";
+        var srtAry = str.split(" ");
+        var leftStr =  srtAry[0];
+        var rightStr = srtAry[1];
+        var leftAryStr = leftStr.split("-");
+        var rightAryStr = rightStr.split(":");
+        var str1 = "";
+        var args = ["年","月","日","时","分","秒"];
+        var str2 = "";
+        for (let index = 0; index < args.length; index++) {
+            if(index>2) {
+                break;
+            }
+            let element1 = args[index];
+            let element2 = args[index+3];
+            str1+=((leftAryStr[index]<10?('0'+leftAryStr[index]):leftAryStr[index])+element1);
+            str2+=((rightAryStr[index]<10?('0'+rightAryStr[index]):rightAryStr[index])+element2);
+        }
+        console.log(str1+" "+str2);
+    </script>
+</body>
+</html>
